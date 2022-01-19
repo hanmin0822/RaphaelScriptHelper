@@ -39,8 +39,9 @@ def touch(pos):
     else:
         ADBHelper.longTouch(deviceID, _pos, randTime)
 
-# 智能模拟滑屏，给定起始点和终点，模拟一次随机智能滑屏
-def slide(startPos, stopPos):
+# 智能模拟滑屏，给定起始点和终点的二元组，模拟一次随机智能滑屏
+def slide(vector):
+    startPos, stopPos = vector
     _startPos = random_pos(startPos)
     _stopPos = random_pos(stopPos)
     randTime = random.randint(st.slideMinVer, st.slideMaxVer)
@@ -85,5 +86,5 @@ def find_pic_slide(target,pos):
     print("【识图】识别 {0} 成功，图块左上角坐标 {1}".format(target, leftTopPos))
     img = cv2.imread(target)
     centerPos = ImageProc.centerOfTouchArea(img.shape,leftTopPos)
-    slide(centerPos, pos)
+    slide((centerPos, pos))
     return True
