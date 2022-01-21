@@ -29,7 +29,16 @@ RaphaelScriptHelper (拉斐尔脚本助手/拉斐尔模块) 是一个基于openC
 
 ## 环境配置
 
-待补充
+Python 3.7
+
+使用到的Python库
+
+```
+numpy=1.19.5
+opencv-python=4.5.1.48
+```
+
+ADB套件请在[这里]()下载并解压放置到脚本框架根目录
 
 ## 快速上手
 使用一行代码来引入 RaphaelScriptHelper

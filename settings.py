@@ -4,7 +4,7 @@ accuracy = 0.93
 #缓存文件存放地址，以/结尾
 cache_path = './cache/'
 
-#事件操作完成等待范围[randomDelayMin,randomDelayMax]，单位秒
+#随机延时范围[randomDelayMin,randomDelayMax]，单位秒
 randomDelayMin = 1
 randomDelayMax = 5
 
