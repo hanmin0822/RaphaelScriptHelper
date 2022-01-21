@@ -27,6 +27,10 @@ RaphaelScriptHelper (拉斐尔脚本助手/拉斐尔模块) 是一个基于openC
 
 欢迎大家编写更多好用的脚本并提PR到本项目中来哦～
 
+## 环境配置
+
+待补充
+
 ## 快速上手
 使用一行代码来引入 RaphaelScriptHelper
 ```python
@@ -41,12 +45,12 @@ rsh.deviceID = "安卓设备ID" #如使用安卓设备，请填写
 ```python
 rsh.touch(pos)
 ```
-使用一行代码来模拟点击屏幕上指定区域，先使用[选择工具]()来指定区域并保存，方便后续识别，会自动在识别区域内任意点、随机时长（防作弊检测）来点击一次
+使用一行代码来模拟点击屏幕上指定区域，先使用[选择工具](https://github.com/hanmin0822/RaphaelScriptHelper/blob/master/FunctionDoc.md#%E6%A0%87%E7%82%B9%E6%88%AA%E5%8F%96%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)来指定区域并保存，方便后续识别，会自动在识别区域内任意点、随机时长（防作弊检测）来点击一次
 ```python
 rsh.find_pic_touch("./test.png")
 ```
 ## 详细功能
-请参阅[详细功能使用手册]()
+请参阅[详细功能使用手册](https://github.com/hanmin0822/RaphaelScriptHelper/blob/master/FunctionDoc.md)
 
 ## 注意事项
 * 本项目仅作学习交流用途，禁止将本项目中的任何脚本、工具用于任何非法用途，如果使用本项目中的工具造成游戏被封号、处罚等概不负责
