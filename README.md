@@ -22,7 +22,7 @@
 RaphaelScriptHelper (拉斐尔脚本助手/拉斐尔模块) 是一个基于openCV图像处理、OCR、ADB等技术的Python框架，可以让脚本编写者在短时间内编写出一个实用的游戏脚本，适用于可以支持脚本运行的各种系统及模拟器，支持诸如识图、点击、按键、滑动、文字识别、随机操作等功能。一个实用的例子是几行代码编写一个简单的明日方舟日常刷图脚本。
 
 ## 目前可以直接使用的脚本
-* [明日方舟集成战略模式（肉鸽）脚本]()
+* [明日方舟集成战略模式（肉鸽）脚本](https://github.com/hanmin0822/RaphaelScriptHelper/blob/master/Arknights/ArknightsRoguelike.py)
 * [明日方舟日常刷图脚本]()
 
 欢迎大家编写更多好用的脚本并提PR到本项目中来哦～
@@ -38,7 +38,7 @@ numpy=1.19.5
 opencv-python=4.5.1.48
 ```
 
-ADB套件请在[这里]()下载并解压放置到脚本框架根目录
+ADB套件请在[这里](https://pan.baidu.com/s/15dpjviyIHezaT56knux2xQ?pwd=mr5p)下载并解压放置到脚本框架根目录
 
 ## 快速上手
 使用一行代码来引入 RaphaelScriptHelper
