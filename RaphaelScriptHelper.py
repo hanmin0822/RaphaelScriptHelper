@@ -49,11 +49,17 @@ def slide(vector):
     ADBHelper.slide(deviceID, _startPos, _stopPos, randTime)
 
 # 截屏，识图，返回坐标
-def find_pic(target):
+def find_pic(target, returnCenter = False):
     ADBHelper.screenCapture(deviceID, st.cache_path + "screenCap.png")
     time.sleep(0.1)
-    leftTopPos = ImageProc.locate(st.cache_path + "screenCap.png", target, st.accuracy)
-    return leftTopPos
+    if returnCenter == True:
+        leftTopPos = ImageProc.locate(st.cache_path + "screenCap.png", target, st.accuracy)
+        img = cv2.imread(target)
+        centerPos = ImageProc.centerOfTouchArea(img.shape, leftTopPos)
+        return centerPos
+    else:
+        leftTopPos = ImageProc.locate(st.cache_path + "screenCap.png", target, st.accuracy)
+        return leftTopPos
 
 # 截屏，识图，返回所有坐标
 def find_pic_all(target):
