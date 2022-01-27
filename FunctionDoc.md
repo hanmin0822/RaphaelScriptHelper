@@ -148,16 +148,17 @@ def touch(pos)
 
 ### find_pic
 
-截取屏幕，在截图中寻找`target`图片，返回满足置信度要求的，置信度最高的区块的左上角坐标
+截取屏幕，在截图中寻找`target`图片，返回满足置信度要求的，置信度最高的区块的左上角坐标或中心坐标
 
 **原型**
 
 ```python
-def find_pic(target)
+def find_pic(target, returnCenter = False)
 ```
 **参数解释**
 
 `target`: 欲寻找的图片路径
+`returnCenter`: 是否返回中心坐标，默认值为`False`，为`True`时返回满足置信度要求的，置信度最高的区块的中心坐标
 
 **返回值**
 
