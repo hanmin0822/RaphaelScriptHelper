@@ -13,7 +13,7 @@ zhongzhuang = (733,744)
 linguang = (1587,644)
 
 juji = (1598,731)
-landu = (1008,227)
+landu = (928,424)
 
 shushi = (1168,686)
 yanrong = (1016,430)
@@ -73,3 +73,13 @@ enter_game = "./img/enter_game.png"
 
 right_slide_down = ((1846, 844), (1846, 232))
 bottom_slide_left = ((1760, 860), (350, 860))
+quchangbuduan = (1380, 856)
+yiwai_landu = (1276, 366)
+yiwai_linguang = (1284, 490)
+yiwai_yanrong = (1402, 356)
+lipaoxiaodui_linguang = (972, 512)
+lipaoxiaodui_landu = (978, 398)
+lipaoxiaodui_yanrong = (960, 616)
+xunshouxiaowu_linguang = (1776, 522)
+xunshouxiaowu_landu = (1748, 374)
+xunshouxiaowu_yanrong = (1596, 390)
