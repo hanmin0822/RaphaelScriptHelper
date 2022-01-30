@@ -1,3 +1,6 @@
+# 请参考视频教程 https://www.bilibili.com/video/BV1u3411E7KD/ 改写此脚本后再运行
+# 请注意视频教程或文字教程中的相关注意事项
+
 import RaphaelScriptHelper as gamer
 import multiprocessing
 import ResourceDictionary as rd
@@ -14,7 +17,7 @@ class Direction(Enum):
 # =======================================================================
 
 # 安卓设备的DID
-gamer.deviceID = "e1be8ee4"
+gamer.deviceID = "127.0.0.1:62001"
 
 # 从点击开始以后到进入正式游戏界面之前的前期准备部分
 def init_front():
@@ -67,9 +70,9 @@ def init_front():
     gamer.random_delay()
     gamer.touch(rd.querenganyuan)
     gamer.random_delay()
+    gamer.delay(3)
     gamer.touch(rd.skip)
-    gamer.delay(1)
-    gamer.touch(rd.skip)
+    
 
 # 与虫为伴关卡所需时间，单位为秒
 fight_yu_chong_wei_ban_duration = 80
@@ -100,13 +103,13 @@ def fight_xun_shou_xiao_wu():
     for i in range(4):
         gamer.delay(4)
 
-        fight_agent_arrange(rd.fight_icon_linguang, rd.yuchongweiban_linguang, Direction.UP)
+        fight_agent_arrange(rd.fight_icon_linguang, rd.xunshouxiaowu_linguang, Direction.Right)
         gamer.delay(5)
 
-        fight_agent_arrange(rd.fight_icon_landu, rd.yuchongweiban_landu, Direction.LEFT)
+        fight_agent_arrange(rd.fight_icon_landu, rd.xunshouxiaowu_landu, Direction.LEFT)
         gamer.delay(8)
 
-        fight_agent_arrange(rd.fight_icon_yanrong, rd.yuchongweiban_yanrong, Direction.UP)
+        fight_agent_arrange(rd.fight_icon_yanrong, rd.xunshouxiaowu_yanrong, Direction.LEFT)
         gamer.delay(10)
 
 # 礼炮小队关卡所需时间，单位为秒
@@ -117,13 +120,13 @@ def fight_li_pao_xiao_dui():
     for i in range(4):
         gamer.delay(4)
 
-        fight_agent_arrange(rd.fight_icon_linguang, rd.yuchongweiban_linguang, Direction.UP)
+        fight_agent_arrange(rd.fight_icon_linguang, rd.lipaoxiaodui_linguang, Direction.RIGHT)
         gamer.delay(5)
 
-        fight_agent_arrange(rd.fight_icon_landu, rd.yuchongweiban_landu, Direction.LEFT)
+        fight_agent_arrange(rd.fight_icon_landu, rd.lipaoxiaodui_landu, Direction.RIGHT)
         gamer.delay(8)
 
-        fight_agent_arrange(rd.fight_icon_yanrong, rd.yuchongweiban_yanrong, Direction.UP)
+        fight_agent_arrange(rd.fight_icon_yanrong, rd.lipaoxiaodui_yanrong, Direction.RIGHT)
         gamer.delay(10)
 
 # 意外关卡所需时间，单位为秒
@@ -134,13 +137,13 @@ def fight_yi_wai():
     for i in range(4):
         gamer.delay(4)
 
-        fight_agent_arrange(rd.fight_icon_linguang, rd.yuchongweiban_linguang, Direction.UP)
+        fight_agent_arrange(rd.fight_icon_landu, rd.yiwai_landu, Direction.DOWN)
         gamer.delay(5)
 
-        fight_agent_arrange(rd.fight_icon_landu, rd.yuchongweiban_landu, Direction.LEFT)
+        fight_agent_arrange(rd.fight_icon_linguang, rd.yiwai_linguang, Direction.LEFT)
         gamer.delay(8)
 
-        fight_agent_arrange(rd.fight_icon_yanrong, rd.yuchongweiban_yanrong, Direction.UP)
+        fight_agent_arrange(rd.fight_icon_yanrong, rd.yiwai_yanrong, Direction.DOWN)
         gamer.delay(10)
 
 
@@ -187,7 +190,7 @@ def fight_agent_arrange(agent, pos, direction):
 
     if gamer.find_pic_slide(agent, pos):
         gamer.delay(0.5)
-        gamer.slide(pos, slide_final_pos)
+        gamer.slide((pos, slide_final_pos))
         gamer.delay(0.5)
         return True
 
@@ -303,7 +306,7 @@ def buqieryu():
                 #下滑一点然后重试一次，防止展示不完全
                 gamer.slide(rd.right_slide_down)
         gamer.delay(3)
-        gamer.touch(rd.dibu)
+        gamer.touch(rd.bottom)
         gamer.random_delay()
         return True
     else:
@@ -356,7 +359,7 @@ def mujianyuxing():
                 #下滑一点然后重试一次，防止展示不完全
                 gamer.slide(rd.right_slide_down)
         gamer.delay(3)
-        gamer.touch(rd.dibu)
+        gamer.touch(rd.bottom)
         gamer.random_delay()
         return True
     else:
@@ -374,7 +377,7 @@ def exit_game():
 
 # 干员编队部分，这里只要分辨率不变，操作是固定的
 def gan_yuan_bian_dui():
-    gamer.touch((1994,1026))
+    gamer.touch((2076,1026))
     gamer.random_delay()
     gamer.touch((1846, 60))
     gamer.random_delay()
@@ -397,6 +400,7 @@ while True:
     if gamer.find_pic_touch(rd.rg_start):
         gamer.random_delay()
         init_front()
+        gamer.random_delay()
         if gamer.find_pic_touch(rd.enter_game):
             gamer.delay(5)
             gan_yuan_bian_dui()
