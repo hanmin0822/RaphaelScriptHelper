@@ -103,7 +103,7 @@ def fight_xun_shou_xiao_wu():
     for i in range(4):
         gamer.delay(4)
 
-        fight_agent_arrange(rd.fight_icon_linguang, rd.xunshouxiaowu_linguang, Direction.Right)
+        fight_agent_arrange(rd.fight_icon_linguang, rd.xunshouxiaowu_linguang, Direction.RIGHT)
         gamer.delay(5)
 
         fight_agent_arrange(rd.fight_icon_landu, rd.xunshouxiaowu_landu, Direction.LEFT)
